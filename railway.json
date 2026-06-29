@@ -1,12 +1,21 @@
 {
+  "$schema": "https://railway.app/railway.schema.json",
   "name": "n8n",
-  "services": {
-    "workflow-automation": {
-      "source": "./Dockerfile",
-      "env": null,
-      "plan": null
-    }
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile"
   },
-  "settings": {
-  }
+  "deploy": {
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 30,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 5,
+    "startUpTimeout": 180,
+    "runtime": 60
+  },
+  "settings": [
+    {
+      "env": "N8N_ENCRYPTION_KEY"
+    }
+  ]
 }
