@@ -1,0 +1,8 @@
+.git
+.gitignore
+README.md
+railway.json
+railway.toml
+.env.example
+og-image.svg
+template-icon.svg

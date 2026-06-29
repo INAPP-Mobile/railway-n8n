@@ -1,0 +1,12 @@
+{
+  "name": "n8n",
+  "services": {
+    "workflow-automation": {
+      "source": "./Dockerfile",
+      "env": null,
+      "plan": null
+    }
+  },
+  "settings": {
+  }
+}

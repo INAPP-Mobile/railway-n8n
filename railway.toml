@@ -1,0 +1,3 @@
+[settings]
+  [settings.annotations]
+    loglevel = "warn"
