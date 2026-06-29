@@ -11,6 +11,8 @@ FROM n8nio/n8n:${N8N_VERSION}
 ENV GENERIC_TIMEZONE=UTC
 ENV NODE_ENV=production
 ENV N8N_BASIC_AUTH_ACTIVE=false
+ENV N8N_BASIC_AUTH_USER=***
+ENV N8N_BASIC_AUTH_PASSWORD=***
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=45s --retries=5 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:5678/ || exit 1
