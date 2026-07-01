@@ -1,4 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-  <rect width="800" height="800" fill="#FF6D5A" rx="100"/>
-  <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="280" font-weight="bold" fill="white">n8</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1A0A00"/><stop offset="100%" stop-color="#0A0400"/></linearGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF6D00"/><stop offset="100%" stop-color="#6C3FC5"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF6D00"/><stop offset="100%" stop-color="#FF9100"/></linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="120" fill="url(#bg)"/>
+  <circle cx="400" cy="400" r="195" stroke="#FF6D00" stroke-width="1.5" opacity="0.12"/>
+  <!-- Workflow nodes -->
+  <g transform="translate(400,380)">
+    <!-- Connections -->
+    <line x1="-160" y1="-60" x2="-80" y2="-60" stroke="#FF6D00" stroke-width="4" opacity="0.25"/>
+    <line x1="-80" y1="-40" x2="0" y2="-40" stroke="#FF6D00" stroke-width="4" opacity="0.25"/>
+    <line x1="0" y1="-20" x2="80" y2="-20" stroke="#FF6D00" stroke-width="4" opacity="0.25"/>
+    <line x1="80" y1="0" x2="160" y2="0" stroke="#FF6D00" stroke-width="4" opacity="0.25"/>
+    <line x1="-80" y1="40" x2="80" y2="40" stroke="#FF6D00" stroke-width="4" opacity="0.25"/>
+    <!-- Nodes -->
+    <circle cx="-160" cy="-60" r="24" fill="url(#node)" opacity="0.8"/>
+    <circle cx="-80" cy="-60" r="20" fill="url(#node)" opacity="0.65"/>
+    <circle cx="0" cy="-40" r="20" fill="url(#node)" opacity="0.75"/>
+    <circle cx="80" cy="-20" r="28" fill="url(#node)" opacity="0.7"/>
+    <circle cx="160" cy="0" r="16" fill="url(#node)" opacity="0.55"/>
+    <circle cx="-80" cy="40" r="18" fill="url(#node)" opacity="0.6"/>
+    <circle cx="80" cy="40" r="22" fill="url(#node)" opacity="0.7"/>
+  </g>
 </svg>
