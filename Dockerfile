@@ -1,12 +1,10 @@
-# Pinned image version — update when major/minor version changes
-ARG N8N_VERSION=2.28.7
-
+# n8n version: 2.28.7 — bump when updating
 # Official n8n Docker image already has:
 #   - docker-entrypoint.sh (via tini) for graceful shutdown/restart
 #   - Port 5678 exposed
 #   - Node.js + YAML support built in
 # This template only adds configurable environment defaults and a health check.
-FROM n8nio/n8n:${N8N_VERSION}
+FROM n8nio/n8n:2.28.7
 
 ENV GENERIC_TIMEZONE=UTC
 ENV NODE_ENV=production

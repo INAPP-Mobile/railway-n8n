@@ -10,12 +10,6 @@
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 5,
-    "startUpTimeout": 180,
-    "runtime": 60
-  },
-  "settings": [
-    {
-      "env": "N8N_ENCRYPTION_KEY"
-    }
-  ]
+    "startUpTimeout": 180
+  }
 }
