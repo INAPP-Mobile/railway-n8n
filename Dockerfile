@@ -8,6 +8,7 @@ ARG N8N_VERSION=2.28.7
 # This template only adds configurable environment defaults and a health check.
 FROM n8nio/n8n:${N8N_VERSION}
 
+ENV N8N_PORT=${PORT:-5678}
 ENV GENERIC_TIMEZONE=UTC
 ENV NODE_ENV=production
 ENV N8N_BASIC_AUTH_ACTIVE=false
