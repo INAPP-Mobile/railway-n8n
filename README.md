@@ -92,7 +92,7 @@ podman build -t railway-n8n .
 mkdir -p ~/n8n-data
 podman run -d --name n8n \
   -p 5678:5678 \
-  -v ~/n8n-data:/home/node/.local/share/n8n \
+  -v ~/n8n-data:/home/node/.n8n \
   --env-file .env \
   railway-n8n
 
@@ -122,7 +122,7 @@ Click the "Deploy on Railway" button above to spin up your own n8n instance in m
 
 ## About Hosting
 
-The n8n Docker image runs a Node.js application that listens on port `5678`. The persistent storage path is `/home/node/.local/share/n8n`, which stores workflows, credentials, and the SQLite database. On Railway, volumes persist across deployments unless explicitly removed — your data stays safe through redeployments and environment changes.
+The n8n Docker image runs a Node.js application that listens on port `5678`. The persistent storage path is `/home/node/.n8n`, which stores workflows, credentials, and the SQLite database. On Railway, volumes persist across deployments unless explicitly removed — your data stays safe through redeployments and environment changes.
 
 Key considerations:
 - **Encryption key**: `N8N_ENCRYPTION_KEY` encrypts all stored credentials in your workflows. Set this once on first deploy and never change it — losing it means every encrypted credential becomes unreadable.

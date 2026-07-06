@@ -10,6 +10,12 @@
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 5,
-    "startUpTimeout": 180
+    "startUpTimeout": 180,
+    "volumeMounts": [
+      {
+        "name": "n8n-data",
+        "mountPath": "/home/node/.n8n"
+      }
+    ]
   }
 }
