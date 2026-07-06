@@ -1,6 +1,6 @@
 # n8n — Workflow Automation Platform
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy?template=n8n)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/new/template/railway-n8n)
 
 Deploy [n8n](https://n8n.io/) — the fair-code workflow automation platform — on Railway in minutes.
 
@@ -107,13 +107,13 @@ Click the "Deploy on Railway" button above to spin up your own n8n instance in m
 
 - **Railway (recommended)**: One-click deploy, automatic HTTPS, scaling, and managed infrastructure. Follow the Quick Start for step-by-step instructions.
 - **Docker/Podman**: Self-host on your own server or VPS with Docker Compose or podman. See Local Development for setup instructions.
-- **Kubernetes**: Deploy n8n as a container in any Kubernetes cluster using the official Docker image (`n8nio/n8n:1.56.0`).
+- **Kubernetes**: Deploy n8n as a container in any Kubernetes cluster using the official Docker image (`n8nio/n8n:2.28.7`).
 
 ### Deployment Details
 
 | Setting | Value |
 |---|---|
-| Base Image | `n8nio/n8n:1.56.0` |
+| Base Image | `n8nio/n8n:2.28.7` |
 | Port | `5678` (HTTP) |
 | Health Check Path | `/` |
 | Restart Policy | On Failure (max 5 retries) |

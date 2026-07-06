@@ -1,0 +1,58 @@
+{
+  "PORT": {
+    "value": "5678",
+    "description": "Port the n8n service listens on inside the container"
+  },
+  "DB_TYPE": {
+    "value": "sqlite",
+    "description": "Database engine: postgresdb for PostgreSQL, sqlite for local dev"
+  },
+  "GENERIC_TIMEZONE": {
+    "value": "UTC",
+    "description": "Timezone for schedule-triggered workflow nodes"
+  },
+  "N8N_BLOCK_ENV_ACCESS_IN_NODE": {
+    "value": "false",
+    "description": "Allow Code nodes to access process.env (v2 defaults to true, set false for v1 compatibility)"
+  },
+  "N8N_SECURE_COOKIE": {
+    "value": "true",
+    "description": "Controls the Secure flag on n8n's session cookie — true (default) sends cookie only over HTTPS"
+  },
+  "DB_POSTGRESDB_HOST": {
+    "value": "localhost",
+    "description": "PostgreSQL hostname (required when using postgresdb)"
+  },
+  "DB_POSTGRESDB_PORT": {
+    "value": "5432",
+    "description": "PostgreSQL port (default: 5432)"
+  },
+  "DB_POSTGRESDB_USER": {
+    "value": "n8n",
+    "description": "PostgreSQL username for database authentication"
+  },
+  "N8N_ENCRYPTION_KEY": {
+    "value": "${{secret(32)}}",
+    "description": "Encryption key for workflow credentials. Set once and never change."
+  },
+  "N8N_BASIC_AUTH_USER": {
+    "value": "admin",
+    "description": "Basic auth username (required if basic auth is active)"
+  },
+  "N8N_BASIC_AUTH_ACTIVE": {
+    "value": "false",
+    "description": "Enable HTTP basic auth on the n8n editor UI"
+  },
+  "DB_POSTGRESDB_DATABASE": {
+    "value": "n8n",
+    "description": "PostgreSQL database name for n8n data"
+  },
+  "DB_POSTGRESDB_PASSWORD": {
+    "value": "${{secret(32)}}",
+    "description": "PostgreSQL password for database authentication"
+  },
+  "N8N_BASIC_AUTH_PASSWORD": {
+    "value": "${{secret(32)}}",
+    "description": "Basic auth password for the n8n editor UI (only needed if basic auth is enabled)"
+  }
+}

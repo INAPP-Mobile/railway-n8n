@@ -1,5 +1,5 @@
 # Pinned image version — update when major/minor version changes
-ARG N8N_VERSION=1.56.0
+ARG N8N_VERSION=2.28.7
 
 # Official n8n Docker image already has:
 #   - docker-entrypoint.sh (via tini) for graceful shutdown/restart
