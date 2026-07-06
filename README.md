@@ -33,8 +33,7 @@ n8n is a powerful automation tool with 400+ native integrations and a visual edi
                     │ :5678        │
                     ├──────────────┤
                     │ /home/node/  │
-                    │ .local/share │
-                    │   /n8n       │
+                    │   .n8n       │
                     └──────────────┘
 ```
 
@@ -109,7 +108,28 @@ Click the "Deploy on Railway" button above to spin up your own n8n instance in m
 - **Docker/Podman**: Self-host on your own server or VPS with Docker Compose or podman. See Local Development for setup instructions.
 - **Kubernetes**: Deploy n8n as a container in any Kubernetes cluster using the official Docker image (`n8nio/n8n:2.28.7`).
 
-### Deployment Details
+### Migrating from n8n v1.x to v2.x
+
+This template uses **n8n v2.28.7** which includes significant breaking changes from v1.x. If upgrading an existing deployment, review these changes:
+
+| Change | v1.x | v2.x | Impact |
+|---|---|---|---|
+| **Container user** | `root` | `node` (UID 1000) | Volume mounts must be writable by UID 1000 |
+| **Data directory** | `/home/node/.local/share/n8n` | `/home/node/.n8n` | Update any volume/bind mount paths |
+| **Port handling** | ignores `PORT` | ignores `PORT` | Must use `N8N_PORT` to match Railway's assigned port |
+| `N8N_BLOCK_ENV_ACCESS_IN_NODE` | `false` | **`true`** | Code nodes can't read `process.env` by default — set to `false` for v1 compatibility |
+| `N8N_RESTRICT_FILE_ACCESS_TO` | unrestricted | **`~/.n8n-files`** | Workflows can't access files outside this directory — set to `/data` or another path if needed |
+| `N8N_SKIP_AUTH_ON_OAUTH_CALLBACK` | `true` | **`false`** | OAuth callbacks now require authentication |
+| `N8N_GIT_NODE_DISABLE_BARE_REPOS` | `false` | **`true`** | Git node bare repos disabled by default |
+| `N8N_SECURE_COOKIE` | — | **`true`** | Session cookies restricted to HTTPS only |
+| **Database backends** | MySQL, MariaDB, PostgreSQL, SQLite | PostgreSQL, SQLite only | **MySQL/MariaDB dropped** — migrate to PostgreSQL or SQLite |
+| **Task runners** | built-in | **separate `n8nio/runners` image** | Code nodes use external task runners by default |
+| `N8N_CONFIG_FILES` | supported | **removed** | Use env vars, `.env` file, or `_FILE` config instead |
+| `QUEUE_WORKER_MAX_STALLED_COUNT` | supported | **removed** | Automatic retry of stalled jobs removed |
+
+**Recommendation**: Before upgrading an existing v1.x instance, run n8n's built-in **Migration Tool** at **Settings → Migration Report** to scan your workflows and config for issues.
+
+## Deployment Details
 
 | Setting | Value |
 |---|---|
