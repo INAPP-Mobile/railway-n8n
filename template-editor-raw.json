@@ -3,10 +3,7 @@
     "value": "5678",
     "description": "Port the n8n service listens on inside the container"
   },
-  "N8N_PORT": {
-    "value": "5678",
-    "description": "Port n8n listens on (must match Railway PORT). Defaults to 5678."
-  },
+
   "DB_TYPE": {
     "value": "sqlite",
     "description": "Database engine: postgresdb for PostgreSQL, sqlite for local dev"
