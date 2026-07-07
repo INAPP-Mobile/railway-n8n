@@ -10,7 +10,9 @@ FROM n8nio/n8n:2.28.7
 USER root
 COPY docker-entrypoint.sh /usr/local/bin/railway-entrypoint.sh
 RUN chmod +x /usr/local/bin/railway-entrypoint.sh
-USER 1000
+
+# Keep USER root so the entrypoint can fix volume permissions
+# The original n8n docker-entrypoint.sh handles dropping to the node user
 
 ENV GENERIC_TIMEZONE=UTC
 ENV NODE_ENV=production
