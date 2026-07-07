@@ -76,3 +76,45 @@ docker run -d --name n8n -p 5678:5678 -v ~/n8n-data:/home/node/.n8n --env-file .
 ```
 
 Open http://localhost:5678.
+
+## Deploy and Host
+
+Click the Deploy button above to deploy on Railway with automatic HTTPS, scaling, and a persistent volume. No configuration required — n8n starts with a managed SQLite database and auto-generated encryption key.
+
+### Hosting Options
+
+- **Railway (recommended)**: One-click deploy, automatic HTTPS, persistent volume, and scaling
+- **Docker/Podman**: Self-host on your own server with Docker Compose
+- **Kubernetes**: Deploy using the official Docker image (`n8nio/n8n:2.28.7`)
+
+## About Hosting
+
+The n8n Docker image runs on port 5678. The volume at `/home/node/.n8n` persists workflows, credentials, and the SQLite database across deployments.
+
+Key considerations:
+- **Encryption key**: `N8N_ENCRYPTION_KEY` encrypts stored credentials. Set once and never change it.
+- **Port**: Use `N8N_PORT` to configure the listen port.
+- **Scaling**: For production workloads, add a PostgreSQL database via service bindings.
+
+## Why Deploy
+
+n8n is the most popular self-hosted workflow automation platform with 61K+ GitHub stars. Self-hosting gives you full privacy, unlimited integrations, no per-workflow fees, and compliance control.
+
+## Common Use Cases
+
+- **Communication** — Slack notifications, email digests, Teams alerts
+- **CRM & Sales** — Lead capture, Salesforce sync, customer segmentation
+- **Data Pipeline** — CSV/JSON transforms, API aggregation, ETL jobs
+- **AI & LLMs** — OpenAI chat completions, document processing, AI agents
+- **DevOps** — CI/CD notifications, log monitoring, infrastructure alerts
+- **Marketing** — Email campaigns, social media posting, lead scoring
+
+## Dependencies for
+
+### Deployment Dependencies
+
+| Dependency | Type | Required | Note |
+|---|---|---|---|
+| Storage volume | Auto-provisioned | Yes | Persists SQLite data across deployments |
+| `N8N_ENCRYPTION_KEY` | Env var | Recommended | Lost on redeploy if auto-generated |
+| PostgreSQL (optional) | Service binding | No | Add via Railway for production workloads |
