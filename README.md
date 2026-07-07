@@ -109,8 +109,6 @@ n8n is the most popular self-hosted workflow automation platform with 61K+ GitHu
 - **DevOps** — CI/CD notifications, log monitoring, infrastructure alerts
 - **Marketing** — Email campaigns, social media posting, lead scoring
 
-## Dependencies for
-
 ### Deployment Dependencies
 
 | Dependency | Type | Required | Note |
