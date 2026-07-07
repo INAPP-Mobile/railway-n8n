@@ -109,10 +109,14 @@ n8n is the most popular self-hosted workflow automation platform with 61K+ GitHu
 - **DevOps** — CI/CD notifications, log monitoring, infrastructure alerts
 - **Marketing** — Email campaigns, social media posting, lead scoring
 
-### Deployment Dependencies
+## Dependencies for Running This Template
 
-| Dependency | Type | Required | Note |
+| Dependency | Type | Required | Notes |
 |---|---|---|---|
-| Storage volume | Auto-provisioned | Yes | Persists SQLite data across deployments |
-| `N8N_ENCRYPTION_KEY` | Env var | Recommended | Lost on redeploy if auto-generated |
-| PostgreSQL (optional) | Service binding | No | Add via Railway for production workloads |
+| Storage volume | Auto-provisioned | Yes | Persists SQLite data, workflows, and credentials across deployments |
+| `N8N_ENCRYPTION_KEY` | Env var | Recommended | Set once and never change — lost on redeploy if auto-generated |
+| PostgreSQL (optional) | Service binding | No | Add via Railway for production workloads instead of SQLite |
+
+## Deployment Dependencies
+
+No additional infrastructure needed — the volume auto-provisions on first deploy. For production, add a PostgreSQL service binding.
