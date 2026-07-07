@@ -1,0 +1,37 @@
+{
+  "N8N_ENCRYPTION_KEY": {
+    "defaultValue": "${{secret(32)}}",
+    "description": "Encrypts credentials stored in workflows. Set once and never change.",
+    "isOptional": false
+  },
+  "N8N_PORT": {
+    "defaultValue": "5678",
+    "description": "Port n8n listens on (default: 5678, Railway auto-assigns)",
+    "isOptional": true
+  },
+  "GENERIC_TIMEZONE": {
+    "defaultValue": "UTC",
+    "description": "Timezone for schedule-triggered nodes, e.g. America/New_York",
+    "isOptional": true
+  },
+  "NODE_ENV": {
+    "defaultValue": "production",
+    "description": "Node.js environment (production for deploy)",
+    "isOptional": true
+  },
+  "N8N_BASIC_AUTH_ACTIVE": {
+    "defaultValue": "false",
+    "description": "Enable HTTP basic auth on the n8n UI",
+    "isOptional": true
+  },
+  "N8N_BASIC_AUTH_USER": {
+    "defaultValue": "***",
+    "description": "Basic auth username",
+    "isOptional": true
+  },
+  "N8N_BASIC_AUTH_PASSWORD": {
+    "defaultValue": "***",
+    "description": "Basic auth password",
+    "isOptional": true
+  }
+}
