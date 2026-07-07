@@ -38,7 +38,36 @@ n8n is a powerful automation tool with 400+ native integrations and a visual edi
 
 ### PostgreSQL (optional)
 
-By default n8n uses SQLite with a persistent volume. For production, add PostgreSQL:
+By default n8n uses SQLite on a persistent volume. For production workloads,
+add a PostgreSQL service binding:
+
+```
+┌─────────────────────────────────────┐
+│          Railway Edge               │
+│     (TLS termination, routing)      │
+└────────────┬────────────────────────┘
+             │                         
+┌────────────▼────────────────────────┐
+│     n8n Container (port 5678)       │
+│  Workflow engine, webhooks, REST    │
+│  400+ integrations, visual editor   │
+└────────────┬────────────────────────┘
+             │                         
+┌────────────▼────────────────────────┐
+│  Data Layer                         │
+│                                     │
+│  SQLite (default on volume):        │
+│  └─ /home/node/.n8n/                │
+│     ├─ workflows & credentials      │
+│     └─ config & cache               │
+│                                     │
+│  PostgreSQL (optional):             │
+│  └─ Add Railway service binding     │
+│     └─ Production workloads         │
+└─────────────────────────────────────┘
+```
+
+To connect n8n to PostgreSQL, set these environment variables:
 
 | Variable | Default | Description |
 |---|---|---|
