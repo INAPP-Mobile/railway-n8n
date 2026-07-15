@@ -1,10 +1,10 @@
-# n8n version: 2.28.7 — bump when updating
+# n8n version: 2.31.0 — bump when updating
 # Official n8n Docker image already has:
 #   - docker-entrypoint.sh (via tini) for graceful shutdown/restart
 #   - Port 5678 exposed
 #   - Node.js + YAML support built in
 # This template only adds configurable environment defaults and a health check.
-FROM n8nio/n8n:2.28.7
+FROM n8nio/n8n:2.31.0
 
 # Entrypoint wrapper: forwards Railway's PORT to n8n's N8N_PORT
 USER root
