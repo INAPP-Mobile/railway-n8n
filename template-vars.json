@@ -23,15 +23,5 @@
     "defaultValue": "false",
     "description": "Enable HTTP basic auth on the n8n UI",
     "isOptional": true
-  },
-  "N8N_BASIC_AUTH_USER": {
-    "defaultValue": "***",
-    "description": "Basic auth username",
-    "isOptional": true
-  },
-  "N8N_BASIC_AUTH_PASSWORD": {
-    "defaultValue": "***",
-    "description": "Basic auth password",
-    "isOptional": true
   }
 }
