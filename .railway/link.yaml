@@ -1,0 +1,4 @@
+project: railway-n8n
+environment: production
+service: railway-n8n
+team: 
