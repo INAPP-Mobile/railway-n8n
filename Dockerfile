@@ -4,7 +4,7 @@
 #   - Port 5678 exposed
 #   - Node.js + YAML support built in
 # This template only adds configurable environment defaults and a health check.
-FROM n8nio/n8n:2.35.6
+FROM n8nio/n8n:2.37.10
 
 # Entrypoint wrapper: forwards Railway's PORT to n8n's N8N_PORT
 USER root
